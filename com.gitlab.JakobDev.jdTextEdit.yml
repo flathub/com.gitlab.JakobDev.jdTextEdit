@@ -11,8 +11,10 @@ build-options:
   env:
     - BASEAPP_REMOVE_PYWEBENGINE=1
 finish-args:
+  - --talk-name=org.freedesktop.Flatpak
   - --socket=fallback-x11
   - --socket=wayland
+  - --filesystem=host
   - --share=network
   - --socket=cups
   - --device=dri
@@ -65,4 +67,4 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/JakobDev/jdTextEdit.git
-        tag: "10.0"
+        tag: "10.1"
