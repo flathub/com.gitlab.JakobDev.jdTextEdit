@@ -23,6 +23,15 @@ finish-args:
 modules:
   - python3-modules.json
 
+  - name: pip
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/bin
+      - mkdir -p /app/lib/python3.9/site-packages
+      - cp -r /usr/lib/python3.9/site-packages/pip /app/lib/python3.9/site-packages
+      - cp -r /usr/lib/python3.9/site-packages/pip-*.egg-info /app/lib/python3.9/site-packages
+      - cp /usr/bin/pip3 /app/bin/pip
+
   - name: qscintilla-pyqt6
     buildsystem: simple
     build-commands:
