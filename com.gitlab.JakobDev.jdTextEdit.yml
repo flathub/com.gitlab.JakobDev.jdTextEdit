@@ -1,9 +1,9 @@
 app-id: com.gitlab.JakobDev.jdTextEdit
 runtime: org.kde.Platform
-runtime-version: "6.2"
+runtime-version: '6.2'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: "6.2"
+base-version: '6.2'
 command: jdTextEdit
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
@@ -35,18 +35,15 @@ modules:
   - name: qscintilla-pyqt6
     buildsystem: simple
     build-commands:
-      - sip-install
-        --target-dir=/app/lib/python3.9/site-packages/
-        --verbose
-        --debug
+      - sip-install --target-dir=/app/lib/python3.9/site-packages/ --verbose --debug
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/b6/18/fd56926545e12571ee421861da0ac257b7ce4c96388ae949a32595762f1b/PyQt6_QScintilla-2.13.2.tar.gz
-        sha256: 9ffe5583200e4d6ce6c3348a4e66faf5ae081046f8b5c75ad6681546bdf2464c
+        url: https://files.pythonhosted.org/packages/f1/23/90210efbae74caf0a8eb5199baab33b686e08f3c4660851cecf16e7cc230/PyQt6_QScintilla-2.13.3.tar.gz
+        sha256: 60c9f23b11a792ff8684ea6ea6fd298e5e0325b841c1c0eac7a4458efbf557c9
         x-checker-data:
-            type: pypi
-            name: PyQt6-QScintilla
-            packagetype: sdist
+          type: pypi
+          name: PyQt6-QScintilla
+          packagetype: sdist
 
   - name: enchant
     config-opts:
@@ -76,4 +73,4 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/JakobDev/jdTextEdit.git
-        tag: "10.1"
+        tag: '10.1'
