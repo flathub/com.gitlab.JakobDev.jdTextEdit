@@ -35,7 +35,7 @@ modules:
   - name: qscintilla-pyqt6
     buildsystem: simple
     build-commands:
-      - sip-install --target-dir=/app/lib/python3.9/site-packages/ --verbose --debug
+      - sip-install --target-dir=/app/lib/python/site-packages/ --verbose --debug
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/f1/23/90210efbae74caf0a8eb5199baab33b686e08f3c4660851cecf16e7cc230/PyQt6_QScintilla-2.13.3.tar.gz
