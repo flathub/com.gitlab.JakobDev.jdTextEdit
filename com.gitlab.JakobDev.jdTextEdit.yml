@@ -26,11 +26,15 @@ modules:
   - name: pip
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/bin
-      - mkdir -p /app/lib/python3.9/site-packages
-      - cp -r /usr/lib/python3.9/site-packages/pip /app/lib/python3.9/site-packages
-      - cp -r /usr/lib/python3.9/site-packages/pip-*.egg-info /app/lib/python3.9/site-packages
-      - cp /usr/bin/pip3 /app/bin/pip
+      - pip3 install --no-deps --no-use-pep517 --ignore-installed --prefix=$FLATPAK_DEST *.whl
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/96/2f/caec18213f6a67852f6997fb0673ae08d2e93d1b81573edb93ba4ef06970/pip-22.1.2-py3-none-any.whl
+        sha256: a3edacb89022ef5258bf61852728bf866632a394da837ca49eb4303635835f17
+        x-checker-data:
+            type: pypi
+            name: pip
+            packagetype: bdist_wheel
 
   - name: qscintilla-pyqt6
     buildsystem: simple
@@ -41,9 +45,9 @@ modules:
         url: https://files.pythonhosted.org/packages/f1/23/90210efbae74caf0a8eb5199baab33b686e08f3c4660851cecf16e7cc230/PyQt6_QScintilla-2.13.3.tar.gz
         sha256: 60c9f23b11a792ff8684ea6ea6fd298e5e0325b841c1c0eac7a4458efbf557c9
         x-checker-data:
-          type: pypi
-          name: PyQt6-QScintilla
-          packagetype: sdist
+            type: pypi
+            name: PyQt6-QScintilla
+            packagetype: sdist
 
   - name: enchant
     config-opts:
@@ -74,6 +78,4 @@ modules:
         tag: '10.2'
         commit: 2398ddfa1bed7ccffdce805fba71bc52b70ad45d
         x-checker-data:
-          type: git
-          url: https://gitlab.com/JakobDev/jdTextEdit.git
-          tag-pattern: (.+)
+            type: git
