@@ -68,14 +68,11 @@ modules:
   - name: jdTextEdit
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST .
-      - install -Dm644 jdTextEdit/Logo.svg /app/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdTextEdit.svg
-      - install -Dm644 deploy/com.gitlab.JakobDev.jdTextEdit.desktop /app/share/applications/com.gitlab.JakobDev.jdTextEdit.desktop
-      - install -Dm644 deploy/com.gitlab.JakobDev.jdTextEdit.metainfo.xml /app/share/metainfo/com.gitlab.JakobDev.jdTextEdit.metainfo.xml
+      - python ./install.py --yes --no-deps --install-locales --prefix=$FLATPAK_DEST
     sources:
       - type: git
         url: https://gitlab.com/JakobDev/jdTextEdit.git
-        tag: '10.2'
-        commit: 2398ddfa1bed7ccffdce805fba71bc52b70ad45d
+        tag: '10.3'
+        commit: 8702a0e38d292b43f31b4d8b3214da38aba7fea2
         x-checker-data:
             type: git
