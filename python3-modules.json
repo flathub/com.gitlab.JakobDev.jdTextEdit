@@ -60,6 +60,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         },
         {
@@ -79,6 +83,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         },
         {
@@ -98,6 +106,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         },
         {
@@ -117,6 +129,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         },
         {
@@ -136,6 +152,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         }
     ]

@@ -1,5 +1,5 @@
 app-id: com.gitlab.JakobDev.jdTextEdit
-runtime: org.kde.Platform
+runtime: org.kde.Sdk
 runtime-version: '6.3'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
@@ -14,7 +14,7 @@ finish-args:
   - --talk-name=org.freedesktop.Flatpak
   - --socket=fallback-x11
   - --socket=wayland
-  - --filesystem=host
+  - --filesystem=host:rw
   - --share=network
   - --socket=cups
   - --device=dri
@@ -26,15 +26,7 @@ modules:
   - name: pip
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --no-use-pep517 --ignore-installed --prefix=$FLATPAK_DEST *.whl
-    sources:
-      - type: file
-        url: https://files.pythonhosted.org/packages/96/2f/caec18213f6a67852f6997fb0673ae08d2e93d1b81573edb93ba4ef06970/pip-22.1.2-py3-none-any.whl
-        sha256: a3edacb89022ef5258bf61852728bf866632a394da837ca49eb4303635835f17
-        x-checker-data:
-            type: pypi
-            name: pip
-            packagetype: bdist_wheel
+      - ln -s /usr/bin/pip3 /app/bin/pip
 
   - name: qscintilla-pyqt6
     buildsystem: simple
@@ -64,6 +56,7 @@ modules:
             tag-pattern: v(.+)
     cleanup:
       - /bin
+      - /share/man
 
   - name: jdTextEdit
     buildsystem: simple

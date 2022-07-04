@@ -2,7 +2,7 @@ This is the official Flatpak for [jdTextEdit](https://gitlab.com/JakobDev/jdText
 
 ## Permissions
 
-### --filesystem=home
+### --filesystem=home:rw
 This is needed to get the full path of Files. It is also needed for .editorconfig.
 
 ### --talk-name=org.freedesktop.Flatpak
