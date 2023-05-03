@@ -29,8 +29,8 @@ modules:
       - sip-install --target-dir=/app/lib/python/site-packages/ --verbose --debug
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/74/74/cb2f0d5e9fc0931741e0ffb7325f0b2fad88add236e8380fd1353d7cd6a5/PyQt6_QScintilla-2.13.4.tar.gz
-        sha256: e6b2bd722944d885fb0bc653208c55dfd47264751081d597f8327f85c30817c8
+        url: https://files.pythonhosted.org/packages/c5/09/34788ef414a7a9f64feab7fab13fa524e5418b685c6defca634685e24674/PyQt6_QScintilla-2.14.0.tar.gz
+        sha256: 61f132ba32db8afa9a364e9f52ef32c8a24452df093c77798c7a04b77483498f
         x-checker-data:
           type: pypi
           name: PyQt6-QScintilla
